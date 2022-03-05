@@ -13,15 +13,14 @@ abstract class WorkDatabase : RoomDatabase() {
 
     companion object {
 
-
         private var instance: WorkDatabase? = null
 
         @Synchronized
         fun getDatabase(context: Context): WorkDatabase {
-
             if (instance == null)
+
                 instance = Room.databaseBuilder(
-                    context.applicationContext, WorkDatabase::class.java,
+                    context, WorkDatabase::class.java,
                     "work_table"
                 )
                     .fallbackToDestructiveMigration()

@@ -21,11 +21,11 @@ interface WorkDao {
 
 
     @Query("DELETE FROM work_table")
-    suspend fun DeleteAllWork() //delete all work
+    suspend fun DeleteAllWorks() //delete all work
 
 
     @Query("SELECT * FROM work_table ORDER BY id ASC")
-    fun getallWorks(): LiveData<List<Work>> //showing data
+    fun getAllWorks(): LiveData<List<Work>> //showing data
 
 
 }
